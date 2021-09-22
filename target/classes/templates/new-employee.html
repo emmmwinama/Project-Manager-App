@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap 4.3.1 CSS -->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <title>New Employee</title>
+</head>
+<body>
+
+    <div class="container">
+        <form action="/employees/save" th:object="${employee}" method="POST">
+            <div class="form-group">
+                <input type="text" placeholder="First name" class="form-control" th:field="${employee.firstName}">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Last name" class="form-control" th:field="${employee.lastName}">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Email" class="form-control" th:field="${employee.email}">
+            </div>
+            <button type="Submit" class="btn btn-primary">Create Employee</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap 4.3.1 JS -->
+    <script th:src="@{/bootstrap/js/bootstrap.bundle.js}"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

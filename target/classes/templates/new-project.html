@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap 4.3.1 CSS -->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <title>New Project</title>
+</head>
+<body>
+
+    <div class="container">
+        <form action="/projects/save" th:object="${project}" method="POST">
+            <div class="form-group">
+                <input type="text" name="" placeholder="Project name" class="form-control" th:field="${project.name}">
+            </div>
+            <div class="form-group">
+                <select class="form-control" th:field="${project.stage}">
+                    <option th:value="NOTSTARTED">Not Started</option>
+                    <option th:value="INPROGRESS">In Progress</option>
+                    <option th:value="COMPLETED">Completed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <textarea type="text" placeholder="Enter Project Description" class="form-control" th:field="${project.description}"></textarea>
+            </div>
+
+            <button type="Submit" class="btn btn-primary">Create Project</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap 4.3.1 JS -->
+    <script th:src="@{/bootstrap/js/bootstrap.bundle.js}"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

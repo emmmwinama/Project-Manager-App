@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www/thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap 4.3.1 CSS -->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <title>New Employee</title>
+    <title>Title</title>
+</head>
+<body>
+
+    <div class="container my-2">
+        <h4>Current Projects</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Project Stage</th>
+                <th>Project Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="aProject: ${projects}">
+                <td th:text="${aProject.name}"></td>
+                <td th:text="${aProject.stage}"></td>
+                <td th:text="${aProject.description}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap 4.3.1 JS -->
+    <script th:src="@{/bootstrap/js/bootstrap.bundle.js}"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
